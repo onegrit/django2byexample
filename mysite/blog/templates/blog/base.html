@@ -1,0 +1,24 @@
+{% load static %}
+{#{% load static %} tells Django to load the static template tags that are#}
+{#provided by the django.contrib.staticfiles application, which is#}
+{#contained in the INSTALLED_APPS setting. After loading it, you are able to#}
+{#use the {% static %} template filter throughout this template. #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+</head>
+<body>
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<div id="sidebar">
+    <h2>Sidebar:My Blog</h2>
+    <p>This is my blog.</p>
+</div>
+</body>
+</html>
